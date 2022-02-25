@@ -11,21 +11,49 @@ window.onload = () => {
 
 const list = [];
 
+console.log(list);
+
+// forEach()
+// const numbers = [28, 77, 45, 99, 27];
+
+// numbers.forEach((number) => {
+// 	console.log(number);
+// });
+
+// filter()
+// const randomNumbers = [4, 11, 42, 14, 39];
+// const filteredArray = randomNumbers.filter((n) => {
+// 	return n > 5;
+// });
+// console.log(filteredArray); //prints new array which numbers are less than 5
+
+//map()
+// const finalParticipants = ['Taylor', 'Donald', 'Don', 'Natasha', 'Bobby'];
+// const announcements = finalParticipants.map((member) => {
+// 	return member + ' joined the contest.';
+// });
+// console.log(announcements); // prints the same array with 'joined the contest'
+
 const remove = () => {
-	// alert('remove');
+	// console.log('remove');
 	// list.pop();
-	// alert(list);
+	// console.log(list);
+	const listIndividual = document.getElementById('listIndividual').textContent;
+
+	const filteredArray = list.filter((n) => {
+		return n == 'hello';
+	});
 	const divList = document.getElementById('myList');
 	divList.innerHTML =
 		'<ul>' +
-		list
-			.map((item) => {
-				if (item == item) {
-				} else {
-					return (
-						'<li>' + item + '</li>' + '<button onClick="remove()">x</button>'
-					);
-				}
+		filteredArray
+			.map((n) => {
+				return (
+					'<li id="listIndividual">' +
+					n +
+					'</li>' +
+					'<button onClick="remove()">x</button>'
+				);
 			})
 			.join('') +
 		'</ul>';
@@ -42,11 +70,15 @@ const enter = () => {
 		list
 			.map((item) => {
 				return (
-					'<li>' + item + '</li>' + '<button onClick="remove()">x</button>'
+					'<li id="listIndividual">' +
+					item +
+					'</li>' +
+					'<button onClick="remove()">x</button>'
 				);
 			})
 			.join('') +
 		'</ul>';
+	console.log(listIndividual);
 
 	// alert(list);
 };
